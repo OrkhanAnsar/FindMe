@@ -1,6 +1,6 @@
 {
   "project_info": {
-    "project_number": "1080604413058",
+    "project_number": "_project_number_",
     "firebase_url": "https://findmenotifications-1d281.firebaseio.com",
     "project_id": "findmenotifications-1d281",
     "storage_bucket": "findmenotifications-1d281.appspot.com"
@@ -15,13 +15,13 @@
       },
       "oauth_client": [
         {
-          "client_id": "1080604413058-ts4h3bfkqa5m6mva7u5m7lnvsdflo2e6.apps.googleusercontent.com",
+          "client_id": "ClientId.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCvr9aL4aqKgi2d3DNWUz0DC8e2Rb8j_ec"
+          "current_key": "YourApiKey"
         }
       ],
       "services": {
