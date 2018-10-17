@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1080604413058",
+    "firebase_url": "https://findmenotifications-1d281.firebaseio.com",
+    "project_id": "findmenotifications-1d281",
+    "storage_bucket": "findmenotifications-1d281.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080604413058:android:cbd32d1cfcd0541e",
+        "android_client_info": {
+          "package_name": "com.companyname.FindMeMobileClient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080604413058-ts4h3bfkqa5m6mva7u5m7lnvsdflo2e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvr9aL4aqKgi2d3DNWUz0DC8e2Rb8j_ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

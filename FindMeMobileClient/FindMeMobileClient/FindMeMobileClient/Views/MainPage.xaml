@@ -1,0 +1,9 @@
+﻿<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:FindMeMobileClient.Views"
+            xmlns:translator="clr-namespace:FindMeMobileClient.Helpers"
+            x:Class="FindMeMobileClient.Views.MainPage" Title="{translator:Translate Text=FindMe}">
+    <local:HomePage Title="{translator:Translate Text=Losts}"/>
+    <local:OrganizationsPage Title="{translator:Translate Text=Organizations}"/>
+    <local:SubscribesPage Title="{translator:Translate Text=Subscribe}"/>
+</TabbedPage>

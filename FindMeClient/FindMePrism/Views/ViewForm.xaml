@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="FindMePrism.Views.ViewForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:local="clr-namespace:FindMePrism.Views"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"              
+             d:DesignHeight="650" d:DesignWidth="690">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding SaveCommand}"/>
+        <KeyBinding Key="F2" Command="{Binding FillFieldsCommand}"/>
+    </UserControl.InputBindings>
+    <Border Background="#283965">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid HorizontalAlignment="Center" Margin="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="4" Style="{StaticResource TitleControlStyle}" Text="{Binding Label, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="First Name"/>
+                <TextBox Margin ="5" Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left"  Text="{Binding Path=Lost.FirstName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource InputControlLostStyle}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Middle Name"/>
+                <TextBox Margin ="5" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Lost.MiddleName, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource InputControlLostStyle}"/>
+
+                <TextBlock Grid.Row="3"  Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Last Name"/>
+                <TextBox Margin ="5" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Lost.LastName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource InputControlLostStyle}"/>
+
+                <TextBlock Grid.Row="4"  Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Signs"/>
+                <TextBox Margin ="5" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Lost.Signs, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource InputControlLostStyle}"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Height"/>
+                <TextBox Margin ="5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=Lost.Height, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource InputControlLostStyle}"/>
+
+                <TextBlock Grid.Row="1"  Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Age"/>
+                <TextBlock Grid.Row="1"  Grid.Column="3" Style="{StaticResource LabelControlLostStyle}" HorizontalAlignment="Left" Text="-" Margin="55,0,0,0"/>
+                <TextBox  Margin ="5" Grid.Row="1" Grid.Column="3" Width="40" HorizontalAlignment="Left"  Text="{Binding Path = Lost.AgeBegin, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource InputControlLostStyle}"/>
+                <TextBox  Margin ="5" Grid.Row="1" Grid.Column="3" Width="40" HorizontalAlignment="Center"  Text="{Binding Path = Lost.AgeEnd, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource InputControlLostStyle}"/>
+
+
+                <TextBlock Grid.Row="2"  Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Gender"/>
+                <ComboBox  Margin ="5" Grid.Row="2" Grid.Column="3" Width="150" HorizontalAlignment="Left"
+                       ItemsSource="{Binding Genders}" SelectedValue="{Binding Path=Lost.Gender, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="3"  Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Hair Color"/>
+                <ComboBox  Margin ="5" Grid.Row="3" Grid.Column="3" Width="150" HorizontalAlignment="Left" 
+                       ItemsSource="{Binding HairColors}" SelectedValue="{Binding Path=Lost.HairColor, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="4"  Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Eye Color"/>
+                <ComboBox  Margin ="5" Grid.Row="4" Grid.Column="3" Width="150" HorizontalAlignment="Left" 
+                       ItemsSource="{Binding EyeColors}"  SelectedValue="{Binding Path=Lost.EyeColor, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                <TextBlock Grid.Row="5"  Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Body Type"/>
+                <ComboBox  Margin ="5" Grid.Row="5" Grid.Column="3" Width="150" HorizontalAlignment="Left" 
+                       ItemsSource="{Binding BodyTypes}"  SelectedValue="{Binding Path=Lost.BodyType, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Date"/>
+                <DatePicker Margin ="5" Grid.Row="6" Grid.Column="1" SelectedDate="{Binding Path=Lost.DetectionTime, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource LabelControlLostStyle}" Text="Time"/>
+                <toolkit:TimePicker Margin ="5" Grid.Row="6" Grid.Column="3" Width="150" HorizontalAlignment="Left"
+                                Value="{Binding Path=Lost.DetectionTime, UpdateSourceTrigger=PropertyChanged}"/>
+          
+                <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Clothes" TextWrapping="Wrap"/>
+                <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                      Grid.Row="7" Margin ="5" Grid.Column="1" Grid.ColumnSpan="3" Height="40" Width="460" HorizontalAlignment="Left"
+                      Text="{Binding Path=Lost.Clothes, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Description"/>
+                <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                      Grid.Row="8" Margin ="5" Grid.Column="1" Grid.ColumnSpan="3" Height="40" Width="460" HorizontalAlignment="Left"
+                      Text="{Binding Path=Lost.Description, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Detection Description" TextWrapping="Wrap"/>
+                <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                      Grid.Row="9" Margin ="5" Grid.Column="1" Grid.ColumnSpan="3" Height="40" Width="460" HorizontalAlignment="Left"
+                      Text="{Binding Path=Lost.DetectionDescription, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Comment"/>
+                <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                      Grid.Row="10" Margin ="5" Grid.Column="1" Grid.ColumnSpan="3" Height="40" Width="460" HorizontalAlignment="Left"
+                      Text="{Binding Path=Lost.Comment, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource LabelControlLostStyle}" Text="Image"/>
+                <TextBox VerticalContentAlignment="Center" Margin ="5" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="3" Height="25" Width="330" HorizontalAlignment="Left"  Text="{Binding Path=Lost.ImagePath, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Margin ="35,5,5,5" Grid.Row="11" Grid.Column="3" Style="{StaticResource LoginButtonStyle}" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center"  Command="{Binding OpenCommand}"  Content="File..."/>
+
+                <TextBlock  Grid.Row="12" Text="Is Found" Style="{StaticResource LabelControlLostStyle}"/>
+                <CheckBox Grid.Column="1" Grid.Row="12"  Background="White" IsChecked="{Binding Path=Lost.IsFound, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <Button Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"  Style="{StaticResource LoginButtonStyle}" Width="280" HorizontalAlignment="Center" Command="{Binding SaveCommand}"  Content="OK"/>
+                <Button Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2"  Style="{StaticResource LoginButtonStyle}" Width="280" HorizontalAlignment="Center" Command="{Binding CancelCommand}" Content="CANCEL"/>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</UserControl>

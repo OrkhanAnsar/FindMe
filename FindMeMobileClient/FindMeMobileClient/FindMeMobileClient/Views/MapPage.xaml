@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FindMeMobileClient.Views.MapPage" Title="">
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map WidthRequest="300" HeightRequest="300"
+            IsShowingUser="true"
+            MapType="Street" x:Name="map" HasZoomEnabled="True">
+                <!--<maps:Map.Pins>
+                    <maps:Pin Type="Place" Label="{Binding Name}" Position="{Binding PinPosition}" />
+                </maps:Map.Pins>-->
+            </maps:Map>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "379930397393",
+    "firebase_url": "https://pushnotify-d4704.firebaseio.com",
+    "project_id": "pushnotify-d4704",
+    "storage_bucket": "pushnotify-d4704.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379930397393:android:cbd32d1cfcd0541e",
+        "android_client_info": {
+          "package_name": "com.companyname.FindMeMobileClient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379930397393-refge32h3bs6ss42jol4la6p9ivmom1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.FindMeMobileClient",
+            "certificate_hash": "4d7fa06086b4b375d968dab86f0b33527a618b13"
+          }
+        },
+        {
+          "client_id": "379930397393-1j7r6tvb1vjdldoqf9oqat5tcd58c7q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcIcKN9cC4i1QnOm-zcFngJH6DhLghEGg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379930397393-1j7r6tvb1vjdldoqf9oqat5tcd58c7q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

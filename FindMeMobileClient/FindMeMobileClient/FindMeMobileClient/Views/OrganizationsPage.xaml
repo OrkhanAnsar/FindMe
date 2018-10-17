@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FindMeMobileClient.Views.OrganizationsPage" x:Name="hyu">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Institutions}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped"
+                      IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshInstitutionsCommand}" IsRefreshing="{Binding IsBusy}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource, 
+                    UpdateSourceEventName=PropertyChanged}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="7">
+                            <StackLayout>
+                                <Label Text="{Binding Name, Mode=OneWay}" FontSize="Large"/>
+                                <Label Text="{Binding City.Name, Mode=OneWay}"/>
+                                <Grid IsVisible="{Binding IsVisible, Mode=OneWay, UpdateSourceEventName=PropertyChanged}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="{Binding Address, Mode=OneWay}"/>
+                                    <Label Grid.Row="1" Text="{Binding Phone, Mode=OneWay}"/>
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0">
+                                            <Label Grid.Row="0" Text="{Binding OpeningHours, Mode=OneWay}"/>
+                                            <Label Grid.Row="1" Text="{Binding Website, Mode=OneWay}"/>
+                                        </StackLayout>
+                                        <Button Grid.Column="1" Text="On map" Command="{Binding Source={x:Reference hyu}, Path=BindingContext.ShowOnMapCommand}"/>
+                                    </Grid>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

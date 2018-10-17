@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FindMeMobileClient.Views.SubscribesPage"
+             x:Name="SubscribesPageView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" ItemsSource="{Binding Filters}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="300">
+                                <Frame Margin="7" Padding="3" HeightRequest="60">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" HeightRequest="20" WidthRequest="20" 
+                                               Source="https://png.pngtree.com/svg/20170421/icon_title_delete_1336408.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                Command="{Binding Source={x:Reference SubscribesPageView}, Path=BindingContext.DeleteFilterCommand}" CommandParameter="{Binding .}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label Grid.Column="1" Text="{Binding FilterDate}"/>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Grid.Row="1" Text="Subscribe" Command="{Binding AddFilterCommand}"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
