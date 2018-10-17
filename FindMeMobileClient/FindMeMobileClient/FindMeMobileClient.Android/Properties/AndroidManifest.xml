@@ -11,7 +11,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<application android:label="Find Me">
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBoZqCrCQK9f2tgDiiDr9xZk3VSoOXsFQw" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YourApiKey" />
 		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
 		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
 			<intent-filter>
