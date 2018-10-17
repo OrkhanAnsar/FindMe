@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="FindMePrism.Views.ViewLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="510" d:DesignWidth="690"
+             xmlns:helpers="clr-namespace:FindMePrism.Helpers">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding LoginCommand}"/>
+    </UserControl.InputBindings>
+    
+    <Border Background="#283965" Opacity=".75" >
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Margin="5"  Style="{StaticResource TitleControlStyle}" Text="FIND ME"/>
+            <TextBlock Grid.Row="1" Style="{StaticResource LabelControlStyle}" Text="LOGIN"/>
+            <TextBox Grid.Row="2" Style="{StaticResource InputControlStyle}" Text="{Binding Institution.Login,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="3" Style="{StaticResource LabelControlStyle}" Text="PASSWORD"/>
+            <PasswordBox helpers:PasswordHelper.Password ="{Binding Institution.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="4" Style="{StaticResource InputControlStyle}"/>
+            <Button Grid.Row="5" Style="{StaticResource LoginButtonStyle}" Command="{Binding LoginCommand}" Content="LOGIN"/>
+        </Grid>
+    </Border>
+</UserControl>
